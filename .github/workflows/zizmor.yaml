@@ -9,6 +9,8 @@ permissions: {}
 jobs:
   zizmor:
     name: Run zizmor
+    permissions:
+      contents: read # Required to checkout repositories
     runs-on: ubuntu-slim
     steps:
       - name: Checkout PR repository
