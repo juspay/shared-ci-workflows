@@ -32,4 +32,4 @@ jobs:
           version: 1.32.0
           advanced-security: false
           fail-on-no-inputs: false
-          config: shared-workflows/.github/zizmor.yml
+          config: shared-workflows/.github/zizmor.yaml
