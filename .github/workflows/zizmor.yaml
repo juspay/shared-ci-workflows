@@ -10,20 +10,12 @@ jobs:
   zizmor:
     name: Run zizmor
     permissions:
-      contents: read # Required to checkout repositories
+      contents: read # To checkout repository
     runs-on: ubuntu-slim
     steps:
-      - name: Checkout PR repository
+      - name: Checkout repository
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
-          persist-credentials: false
-
-      - name: Checkout central configuration
-        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
-        with:
-          repository: ${{ job.workflow_repository }}
-          ref: ${{ job.workflow_sha }}
-          path: shared-workflows
           persist-credentials: false
 
       - name: Run zizmor
@@ -32,4 +24,3 @@ jobs:
           version: 1.32.0
           advanced-security: false
           fail-on-no-inputs: false
-          config: shared-workflows/.github/zizmor.yaml
